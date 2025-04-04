@@ -14,8 +14,8 @@ engine = create_engine("postgresql+psycopg2://postgres:4712@localhost:5432/labor
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind = engine)
 session = Session()
-print(session.query(world_weather).count())
-"""if session.query(world_weather).count() == 0:
+
+if session.query(world_weather).count() == 0:
     df = read_dt()
 
     for i in df.itertuples(index = False):
@@ -32,7 +32,7 @@ print(session.query(world_weather).count())
             moonset = datetime.strptime(i.moonset, "%I:%M %p") if(i.moonset != "No moonset") else None
         ))
 
-    session.commit()"""
+    session.commit()
 session.close()
 
 engine = create_engine("postgresql+psycopg2://postgres:4712@localhost:5432/laboratorna3")
