@@ -65,3 +65,4 @@ def data_2(i):
     data_h = session2.query(heavenly_bodies).filter(heavenly_bodies.id == i.id).first()
     return data_h
 
+session2.close()
